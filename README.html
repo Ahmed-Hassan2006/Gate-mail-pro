@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gate Mail Pro - User Documentation</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Segoe+UI:wght@300;400;600;700;800&display=swap');
+
+        :root {
+            --primary-color: #1976d2;
+            --primary-hover: #1565c0;
+            --secondary-color: #2e7d32;
+            --danger-color: #d32f2f;
+            --bg-color: #f8f9fa;
+            --card-bg: #ffffff;
+            --text-main: #212529;
+            --text-muted: #6c757d;
+            --shadow: 0 4px 15px rgba(0,0,0,0.05);
+            --border-radius: 12px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.8;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 40px 30px;
+            border-radius: var(--border-radius);
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(30, 60, 114, 0.15);
+            margin-bottom: 30px;
+        }
+
+        header h1 {
+            font-size: 2.4rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        section {
+            background-color: var(--card-bg);
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            margin-bottom: 25px;
+            border: 1px solid rgba(0,0,0,0.03);
+        }
+
+        h2 {
+            color: #1e3c72;
+            font-size: 1.6rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #eef2f7;
+            padding-bottom: 10px;
+        }
+
+        p {
+            font-size: 1.05rem;
+            color: #495057;
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        ul {
+            list-style: none;
+            margin-bottom: 15px;
+            padding-left: 0;
+        }
+
+        li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 12px;
+            font-size: 1rem;
+            color: #495057;
+        }
+
+        li::before {
+            content: "✦";
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        @media (max-width: 600px) {
+            .team-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .member-card {
+            background-color: #fdfdfd;
+            border: 1px solid #eef2f7;
+            padding: 20px;
+            border-radius: var(--border-radius);
+            text-align: center;
+        }
+
+        .member-card h3 {
+            color: #1e3c72;
+            font-size: 1.25rem;
+            margin-bottom: 5px;
+        }
+
+        .member-card .role {
+            font-size: 0.9rem;
+            color: var(--primary-color);
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .contact-info {
+            background-color: #f1f3f5;
+            padding: 20px;
+            border-radius: var(--border-radius);
+            margin-top: 15px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: white;
+            padding: 12px 20px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #dee2e6;
+        }
+
+        @media (max-width: 500px) {
+            .contact-item {
+                flex-direction: column;
+                gap: 10px;
+                text-align: center;
+            }
+        }
+
+        .contact-item span {
+            font-weight: bold;
+            font-size: 1.1rem;
+            color: #343a40;
+            user-select: all;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 10px;
+        }
+
+        .btn {
+            padding: 8px 16px;
+            border: none;
+            border-radius: 6px;
+            font-family: inherit;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        .btn-copy {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-copy:hover {
+            background-color: var(--primary-hover);
+        }
+
+        .btn-link {
+            background-color: #25d366;
+            color: white;
+        }
+
+        .btn-link.telegram {
+            background-color: #0088cc;
+        }
+
+        .btn-link:hover {
+            opacity: 0.9;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px 0;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <header>
+        <h1>Gate Mail Pro (GMP)</h1>
+        <p>A Professional Multi-Engine Temporary Email Gateway</p>
+    </header>
+
+    <section>
+        <h2>What is Gate Mail Pro?</h2>
+        <p>
+            <strong>Gate Mail Pro</strong> is an elegant, fast, and feature-rich desktop client designed to generate, manage, and monitor disposable temporary emails. It acts as a centralized gateway, providing seamless access to several high-quality temporary email architectures without requiring you to visit clunky websites or face tracking scripts.
+        </p>
+    </section>
+
+    <section>
+        <h2>Understanding Disposable Email</h2>
+        <p>
+            A disposable (temporary) email address is a real inbox created on the fly for a specific purpose. It operates independently of your private or personal identity, allowing you to interact with websites and services without risking your data.
+        </p>
+        <p><strong>Key Advantages:</strong></p>
+        <ul>
+            <li><strong>Eliminate Spam:</strong> Register on forums, download e-books, or access quick trials without clogging your primary inbox with advertisements and promotional newsletters.</li>
+            <li><strong>Preserve Privacy:</strong> Prevent data breaches from exposing your real passwords and email address, keeping your digital footprint secure.</li>
+            <li><strong>Instant Trialing:</strong> Sign up and test software platforms instantly without filling out tedious personal questionnaires.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Unique Features</h2>
+        <p>
+            Unlike basic web-based disposable mail services that delete your inbox the moment you refresh or close your browser, Gate Mail Pro offers key desktop utilities:
+        </p>
+        <ul>
+            <li><strong>Multi-Server Routing:</strong> Choose from various reputable email environments and domains depending on your needs.</li>
+            <li><strong>Account Persistence:</strong> Your generated accounts are saved locally. You can close the program, open it tomorrow, and log back into your temporary inbox to read new verification messages.</li>
+            <li><strong>Smart Content Extraction:</strong> Right-click on any incoming message to extract links and verification numbers instantly. This eliminates the need to scan through long, HTML-heavy emails manually.</li>
+            <li><strong>Background Operation:</strong> Minimize the application to your system tray. It will run silently in the background, showing desktop alerts only when new mail is detected.</li>
+            <li><strong>Complete UI Personalization:</strong> Customize font sizes, toggle between high-quality light and dark modes, and easily load custom translation files.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Quick Start Guide</h2>
+        <p>The interface is divided into three intuitive views:</p>
+        <ul>
+            <li><strong>Your Saved Accounts:</strong> View, access, or delete all of your generated temporary accounts. You can wipe all accounts at once with a single click.</li>
+            <li><strong>Create New Account:</strong> Select your preferred domain name, enter a custom username, or click the random generator to construct a secure inbox.</li>
+            <li><strong>Inbox Dashboard:</strong> Read incoming messages, copy your current email address, trigger manual refreshes, or enable auto-refresh (10s) to wait for verification messages.</li>
+        </ul>
+    </section>
+
+    <!-- تم تعديل الصياغة بدقة شديدة لتطابق توجيهاتك دون أي زيادة أو مبالغة -->
+    <section>
+        <h2>Development & Credits</h2>
+        <p>
+            We would like to express our gratitude to those who built and designed this application, as well as those who helped bring this project to life:
+        </p>
+        <div class="team-grid">
+            <div class="member-card">
+                <h3>Ahmed Hassan Abd El-Naby</h3>
+                <div class="role">Developer</div>
+                <p>The developer of this program, who built and designed the entire application.</p>
+            </div>
+            <div class="member-card">
+                <h3>Youssef Ahmed Hedeya</h3>
+                <div class="role">Contributor</div>
+                <p>Contributed to the core concept of the program and participated in testing it.</p>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>Contact & Support</h2>
+        <p>
+            If you encounter any issues, want to report a bug, or would like to propose an enhancement to the program, please contact us directly:
+        </p>
+        <div class="contact-info">
+            <div class="contact-item">
+                <span>01558863325</span>
+                <div class="btn-group">
+                    <button id="copy-phone" class="btn btn-copy" onclick="copyValue('01558863325', 'copy-phone')">Copy Phone</button>
+                    <a href="https://wa.me/201558863325" target="_blank" class="btn btn-link">WhatsApp</a>
+                </div>
+            </div>
+            
+            <div class="contact-item">
+                <span>ah2635670@gmail.com</span>
+                <div class="btn-group">
+                    <button id="copy-email" class="btn btn-copy" onclick="copyValue('ah2635670@gmail.com', 'copy-email')">Copy Email</button>
+                    <a href="mailto:ah2635670@gmail.com" class="btn btn-copy" style="background-color: #d44638;">Email Us</a>
+                </div>
+            </div>
+
+            <div class="contact-item">
+                <span>@ah3376</span>
+                <div class="btn-group">
+                    <a href="https://t.me/ah3376" target="_blank" class="btn btn-link telegram">Telegram</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        All rights reserved &copy; 2026 | Gate Mail Pro
+    </footer>
+
+</div>
+
+<script>
+    function copyValue(text, buttonId) {
+        navigator.clipboard.writeText(text).then(() => {
+            const btn = document.getElementById(buttonId);
+            const originalText = btn.innerHTML;
+            btn.innerHTML = "Copied! ✓";
+            btn.style.backgroundColor = "#2e7d32";
+            setTimeout(() => {
+                btn.innerHTML = originalText;
+                btn.style.backgroundColor = "";
+            }, 1800);
+        }).catch(err => {
+            alert("Clipboard copy failed: " + err);
+        });
+    }
+</script>
+
+</body>
+</html>
