@@ -1,0 +1,933 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gate Mail Pro - User Documentation</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Segoe+UI:wght@300;400;600;700;800&display=swap');
+
+        :root {
+            --primary-color: #1976d2;
+            --primary-hover: #1565c0;
+            --secondary-color: #2e7d32;
+            --danger-color: #d32f2f;
+            --bg-color: #f8f9fa;
+            --card-bg: #ffffff;
+            --text-main: #212529;
+            --text-muted: #6c757d;
+            --shadow: 0 4px 15px rgba(0,0,0,0.05);
+            --border-radius: 12px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.8;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 40px 30px;
+            border-radius: var(--border-radius);
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(30, 60, 114, 0.15);
+            margin-bottom: 30px;
+        }
+
+        header h1 {
+            font-size: 2.4rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        /* ---- Download Buttons ---- */
+        .download-section {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+
+        .download-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1rem;
+            transition: all 0.2s ease;
+        }
+
+        .download-btn.installer {
+            background-color: #2563eb;
+            color: white;
+        }
+
+        .download-btn.installer:hover {
+            background-color: #1d4ed8;
+        }
+
+        .download-btn.portable {
+            background-color: #059669;
+            color: white;
+        }
+
+        .download-btn.portable:hover {
+            background-color: #047857;
+        }
+
+        /* ---- Table of Contents ---- */
+        nav.toc {
+            background-color: var(--card-bg);
+            padding: 25px 30px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            margin-bottom: 25px;
+            border: 1px solid rgba(0,0,0,0.03);
+        }
+
+        nav.toc h2 {
+            margin-bottom: 15px;
+        }
+
+        nav.toc ol {
+            padding-left: 20px;
+            color: #495057;
+            line-height: 2.2;
+        }
+
+        nav.toc a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        nav.toc a:hover {
+            text-decoration: underline;
+        }
+
+        /* ---- Sections ---- */
+        section {
+            background-color: var(--card-bg);
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            margin-bottom: 25px;
+            border: 1px solid rgba(0,0,0,0.03);
+        }
+
+        h2 {
+            color: #1e3c72;
+            font-size: 1.6rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #eef2f7;
+            padding-bottom: 10px;
+        }
+
+        h3 {
+            color: #1e3c72;
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin: 20px 0 10px 0;
+        }
+
+        p {
+            font-size: 1.05rem;
+            color: #495057;
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        ul, ol {
+            list-style: none;
+            margin-bottom: 15px;
+            padding-left: 0;
+        }
+
+        li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 12px;
+            font-size: 1rem;
+            color: #495057;
+        }
+
+        li::before {
+            content: "✦";
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        /* ---- Keyboard Shortcut Table ---- */
+        .shortcut-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0 15px 0;
+        }
+
+        .shortcut-table th, .shortcut-table td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #eef2f7;
+        }
+
+        .shortcut-table th {
+            background-color: #f1f5f9;
+            color: #1e3c72;
+            font-weight: 700;
+            font-size: 1rem;
+        }
+
+        .shortcut-table kbd {
+            background-color: #e9ecef;
+            border: 1px solid #ced4da;
+            border-radius: 4px;
+            padding: 3px 8px;
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 0.9rem;
+            white-space: nowrap;
+        }
+
+        .screenreader-badge {
+            display: inline-block;
+            background-color: #fff3cd;
+            color: #856404;
+            font-weight: 700;
+            font-size: 0.8rem;
+            padding: 4px 10px;
+            border-radius: 20px;
+            margin-left: 8px;
+            vertical-align: middle;
+        }
+
+        .new-badge {
+            display: inline-block;
+            background-color: #dcfce7;
+            color: #166534;
+            font-weight: 700;
+            font-size: 0.75rem;
+            padding: 3px 8px;
+            border-radius: 20px;
+            margin-left: 6px;
+            vertical-align: middle;
+        }
+
+        /* ---- Team Grid ---- */
+        .team-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        @media (max-width: 600px) {
+            .team-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .member-card {
+            background-color: #fdfdfd;
+            border: 1px solid #eef2f7;
+            padding: 20px;
+            border-radius: var(--border-radius);
+            text-align: center;
+        }
+
+        .member-card h3 {
+            color: #1e3c72;
+            font-size: 1.25rem;
+            margin-bottom: 5px;
+        }
+
+        .member-card .role {
+            font-size: 0.9rem;
+            color: var(--primary-color);
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        /* ---- Contact ---- */
+        .contact-info {
+            background-color: #f1f3f5;
+            padding: 20px;
+            border-radius: var(--border-radius);
+            margin-top: 15px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: white;
+            padding: 12px 20px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #dee2e6;
+        }
+
+        @media (max-width: 500px) {
+            .contact-item {
+                flex-direction: column;
+                gap: 10px;
+                text-align: center;
+            }
+        }
+
+        .contact-item span {
+            font-weight: bold;
+            font-size: 1.1rem;
+            color: #343a40;
+            user-select: all;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 10px;
+        }
+
+        .btn {
+            padding: 8px 16px;
+            border: none;
+            border-radius: 6px;
+            font-family: inherit;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        .btn-copy {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-copy:hover {
+            background-color: var(--primary-hover);
+        }
+
+        .btn-link {
+            background-color: #25d366;
+            color: white;
+        }
+
+        .btn-link.telegram {
+            background-color: #0088cc;
+        }
+
+        .btn-link:hover {
+            opacity: 0.9;
+        }
+
+        .developer-note {
+            background-color: #fff3cd;
+            border: 1px solid #ffc107;
+            border-radius: 8px;
+            padding: 12px 16px;
+            margin: 15px 0;
+            font-size: 0.95rem;
+            color: #856404;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px 0;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <header>
+        <h1>Gate Mail Pro (GMP)</h1>
+        <p>A Professional Multi-Engine Temporary Email Gateway — Version 2.1.3</p>
+    </header>
+
+    <!-- ==================== TABLE OF CONTENTS ==================== -->
+    <nav class="toc" aria-label="Table of Contents">
+        <h2>📖 Table of Contents</h2>
+        <ol>
+            <li><a href="#what-is-gmp">What is Gate Mail Pro?</a></li>
+            <li><a href="#disposable-email">Understanding Disposable Email</a></li>
+            <li><a href="#download">Download &amp; Installation</a></li>
+            <li><a href="#interface-overview">Interface Overview &amp; Screen Reader Navigation</a></li>
+            <li><a href="#keyboard-shortcuts">Keyboard Shortcuts Reference</a></li>
+            <li><a href="#creating-accounts">Creating &amp; Managing Accounts</a></li>
+            <li><a href="#inbox-dashboard">Inbox Dashboard &amp; Reading Messages</a></li>
+            <li><a href="#content-extraction">Extracting Links &amp; Verification Codes</a></li>
+            <li><a href="#inbox-features">Inbox Features: Search, Sort &amp; Statistics</a></li>
+            <li><a href="#menu-settings">Menu Settings Explained</a></li>
+            <li><a href="#system-tray">System Tray &amp; Background Operation</a></li>
+            <li><a href="#sounds">Notification Sounds</a></li>
+            <li><a href="#updates">Checking for Updates</a></li>
+            <li><a href="#unique-features">Unique Features Summary</a></li>
+            <li><a href="#troubleshooting">Troubleshooting &amp; FAQ</a></li>
+            <li><a href="#credits">Development &amp; Credits</a></li>
+            <li><a href="#contact">Contact &amp; Support</a></li>
+        </ol>
+    </nav>
+
+    <!-- ==================== 1. WHAT IS GMP ==================== -->
+    <section id="what-is-gmp">
+        <h2>1. What is Gate Mail Pro?</h2>
+        <p>
+            <strong>Gate Mail Pro</strong> is an elegant, fast, and feature-rich desktop application designed to generate, manage, and monitor disposable temporary email addresses. It acts as a centralized gateway, providing seamless access to several temporary email servers without requiring you to visit clunky websites, endure advertisements, or face invasive tracking scripts.
+        </p>
+        <p>
+            Whether you need a quick email to verify a forum account, download a trial, or protect your identity online, Gate Mail Pro puts you in complete control — right from your desktop.
+        </p>
+    </section>
+
+    <!-- ==================== 2. DISPOSABLE EMAIL ==================== -->
+    <section id="disposable-email">
+        <h2>2. Understanding Disposable Email</h2>
+        <p>
+            A disposable (temporary) email address is a real inbox created on the fly for a specific purpose. It operates independently of your private or personal identity, allowing you to interact with websites and services without risking your data.
+        </p>
+        <p><strong>Key Advantages:</strong></p>
+        <ul>
+            <li><strong>Eliminate Spam:</strong> Register on forums, download e-books, or access quick trials without clogging your primary inbox with advertisements and promotional newsletters.</li>
+            <li><strong>Preserve Privacy:</strong> Prevent data breaches from exposing your real passwords and email address, keeping your digital footprint secure.</li>
+            <li><strong>Instant Trialing:</strong> Sign up and test software platforms instantly without filling out tedious personal questionnaires.</li>
+        </ul>
+    </section>
+
+    <!-- ==================== 3. DOWNLOAD & INSTALLATION ==================== -->
+    <section id="download">
+        <h2>3. Download &amp; Installation</h2>
+        <p>
+            Gate Mail Pro is distributed in two formats. Choose the one that best suits your needs:
+        </p>
+        <div class="download-section">
+            <a href="https://github.com/Ahmed-Hassan2006/Gate-mail-pro/releases/download/V2.1.3/GateMailProV2.1.3_Setup.exe" target="_blank" class="download-btn installer">
+                📦 Installer Version
+            </a>
+            <a href="https://github.com/Ahmed-Hassan2006/Gate-mail-pro/releases/download/V2.1.3/GateMailPro_V2.1.3.zip" target="_blank" class="download-btn portable">
+                💾 Portable Version (ZIP)
+            </a>
+        </div>
+
+        <h3>Installer Version</h3>
+        <p>
+            A traditional setup wizard that installs the application on your system with Start Menu shortcuts. Simply run the downloaded <code>.exe</code> file and follow the on‑screen instructions.
+        </p>
+
+        <h3>Portable Version</h3>
+        <p>
+            A ZIP archive containing the application files — no installation required. Simply extract the archive to any folder on your computer (or a USB drive) and run the executable directly. Alongside it you will find several important folders: <code>languages</code>, <code>Changes</code>, and <code>sounds</code>. Keep these folders in the same directory — the program reads them at startup.
+        </p>
+
+        <h3>First Launch</h3>
+        <p>
+            On first launch you will be asked to select your preferred interface language. The main window will then open, and you are ready to create your first temporary email account.
+        </p>
+    </section>
+
+    <!-- ==================== 4. INTERFACE OVERVIEW ==================== -->
+    <section id="interface-overview">
+        <h2>4. Interface Overview &amp; Screen Reader Navigation</h2>
+        <p>
+            Gate Mail Pro was built with accessibility in mind. Every button, list, text field, and menu item is properly labeled and exposed to assistive technology such as screen readers (NVDA, JAWS, Narrator). The interface is divided into <strong>four main screens</strong> that you switch between using the navigation controls or keyboard shortcuts.
+        </p>
+
+        <h3>Screen 1 — Your Saved Accounts <span class="screenreader-badge">Accessible</span></h3>
+        <p>
+            This is the home screen. It displays a list of all temporary accounts you have created and saved. Each entry shows the email address and the date it was created. Below the list you will find four buttons:
+        </p>
+        <ul>
+            <li><strong>Login (Enter):</strong> Opens the inbox for the selected account.</li>
+            <li><strong>Delete Selected (Delete):</strong> Removes only the highlighted account.</li>
+            <li><strong>Delete All Accounts:</strong> Wipes every saved account after a confirmation prompt.</li>
+            <li><strong>Create New Account:</strong> Moves you to the account creation screen.</li>
+        </ul>
+        <p><strong>Screen Reader Tip:</strong> Use the <kbd>Tab</kbd> key to move through the list and buttons. Press <kbd>Enter</kbd> on a highlighted account to open it. Press <kbd>Delete</kbd> to remove the selected account without touching the mouse.</p>
+
+        <h3>Screen 2 — Create New Account <span class="screenreader-badge">Accessible</span></h3>
+        <p>
+            Here you select a domain from the dropdown, type a custom username or click <strong>Generate Random</strong>, and confirm creation. Some domains generate the username automatically for you — in that case the username field will be hidden and a message will inform you.
+        </p>
+        <p><strong>Screen Reader Tip:</strong> Focus lands on the domain dropdown. Press <kbd>Tab</kbd> to move through the controls. Type your desired name or press the Random button. Press <kbd>Enter</kbd> on <strong>Confirm &amp; Create</strong> to finish.</p>
+
+        <h3>Screen 3 — Inbox Dashboard <span class="screenreader-badge">Accessible</span></h3>
+        <p>
+            Once you have created or logged into an account, you land here. The top section shows your ready‑to‑use email address with a <strong>Copy Email</strong> button. Below that, a refresh button, an auto‑refresh checkbox, a search field, a sort dropdown, inbox statistics, and the message list. Double‑clicking a message opens it in a dedicated reading window.
+        </p>
+        <p><strong>Screen Reader Tip:</strong> The email address is in a read‑only text field — your screen reader will announce it as soon as the dashboard opens. Use <kbd>Tab</kbd> to reach the message list and arrow keys to browse subjects. Press <kbd>Enter</kbd> to open a message.</p>
+
+        <h3>Screen 4 — Message Reader <span class="screenreader-badge">Accessible</span></h3>
+        <p>
+            When you open a message, you land on a dedicated reading screen. The top bar has a <strong>Back</strong> button and an <strong>Actions Menu</strong> button. The message content is displayed in a list format with the sender, subject, and body clearly separated. You can right‑click or press the <kbd>Applications</kbd> key to access the context menu with copy, extract, and save options.
+        </p>
+        <p><strong>Screen Reader Tip:</strong> The message content is announced line by line. Use arrow keys to navigate. Press <kbd>Applications</kbd> or <kbd>Shift</kbd>+<kbd>F10</kbd> to open the context menu for additional actions.</p>
+    </section>
+
+    <!-- ==================== 5. KEYBOARD SHORTCUTS ==================== -->
+    <section id="keyboard-shortcuts">
+        <h2>5. Keyboard Shortcuts Reference</h2>
+        <p>
+            Gate Mail Pro can be operated entirely without a mouse. The following shortcuts work globally or within specific screens. They are especially useful for screen reader users who rely on the keyboard.
+        </p>
+        <table class="shortcut-table" aria-label="Keyboard Shortcuts">
+            <thead>
+                <tr>
+                    <th>Shortcut</th>
+                    <th>Context</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><kbd>Tab</kbd></td>
+                    <td>Anywhere</td>
+                    <td>Moves focus to the next control (buttons, lists, fields).</td>
+                </tr>
+                <tr>
+                    <td><kbd>Shift</kbd>+<kbd>Tab</kbd></td>
+                    <td>Anywhere</td>
+                    <td>Moves focus to the previous control.</td>
+                </tr>
+                <tr>
+                    <td><kbd>Enter</kbd></td>
+                    <td>On a focused button</td>
+                    <td>Activates the button (same as clicking).</td>
+                </tr>
+                <tr>
+                    <td><kbd>Enter</kbd></td>
+                    <td>On an account in the saved list</td>
+                    <td>Opens the inbox for that account.</td>
+                </tr>
+                <tr>
+                    <td><kbd>Enter</kbd></td>
+                    <td>On a message in the inbox list</td>
+                    <td>Opens the message reading window.</td>
+                </tr>
+                <tr>
+                    <td><kbd>Delete</kbd></td>
+                    <td>Saved accounts screen</td>
+                    <td>Deletes the selected account.</td>
+                </tr>
+                <tr>
+                    <td><kbd>F5</kbd></td>
+                    <td>Inbox dashboard</td>
+                    <td>Manually refreshes the inbox.</td>
+                </tr>
+                <tr>
+                    <td><kbd>Escape</kbd></td>
+                    <td>Create account screen</td>
+                    <td>Returns to the accounts list.</td>
+                </tr>
+                <tr>
+                    <td><kbd>Escape</kbd></td>
+                    <td>Inbox dashboard</td>
+                    <td>Logs out and returns to accounts list.</td>
+                </tr>
+                <tr>
+                    <td><kbd>Escape</kbd></td>
+                    <td>Message reader</td>
+                    <td>Returns to the inbox dashboard.</td>
+                </tr>
+                <tr>
+                    <td><kbd>Applications</kbd> / <kbd>Shift</kbd>+<kbd>F10</kbd></td>
+                    <td>Message reader</td>
+                    <td>Opens the context menu for the selected message.</td>
+                </tr>
+            </tbody>
+        </table>
+        <p>
+            <strong>Note:</strong> All buttons and menu items are reachable via <kbd>Tab</kbd> and <kbd>Shift</kbd>+<kbd>Tab</kbd>. The menu bar is fully compatible with screen reader browse and focus modes.
+        </p>
+    </section>
+
+    <!-- ==================== 6. CREATING & MANAGING ACCOUNTS ==================== -->
+    <section id="creating-accounts">
+        <h2>6. Creating &amp; Managing Accounts</h2>
+        <h3>How to Create an Account</h3>
+        <ol>
+            <li>From the main screen, click <strong>Create New Account</strong> or press <kbd>Tab</kbd> until you reach it and press <kbd>Enter</kbd>.</li>
+            <li>Choose a domain from the dropdown.</li>
+            <li>If the domain allows custom usernames, type your preferred name or click <strong>Generate Random</strong>. If the domain does not allow custom names, a message will inform you that the username is generated automatically.</li>
+            <li>Click <strong>Confirm &amp; Create</strong>. A loading dialog will appear while the account is being registered.</li>
+            <li>Once created, the application automatically saves the account and opens the inbox dashboard.</li>
+        </ol>
+
+        <h3>Managing Saved Accounts</h3>
+        <p>
+            Every account you create is stored locally on your computer. They persist between sessions — you can close the program, reopen it later, and find all your accounts waiting on the main screen. From there you can:
+        </p>
+        <ul>
+            <li>Log into any account to check for new messages.</li>
+            <li>Delete individual accounts you no longer need.</li>
+            <li>Delete all accounts at once via the dedicated button (a confirmation dialog will appear).</li>
+        </ul>
+
+        <h3>Account Limit</h3>
+        <p>
+            <strong>New in V2.1.3:</strong> Gate Mail Pro allows a maximum of <strong>2 accounts</strong> to be saved at any time. This limit helps maintain optimal performance and ensures reliable operation. If you need more accounts, you can delete unused ones and create new ones as needed.
+        </p>
+
+        <h3>Clearing All Application Data</h3>
+        <p>
+            If you wish to completely reset Gate Mail Pro to its factory state — removing all accounts, settings, language preferences, and sound selections — go to <strong>Settings &gt; Clear All Data</strong>. The program will close automatically after the operation. Use this with caution, as the action cannot be undone.
+        </p>
+    </section>
+
+    <!-- ==================== 7. INBOX DASHBOARD ==================== -->
+    <section id="inbox-dashboard">
+        <h2>7. Inbox Dashboard &amp; Reading Messages</h2>
+        <h3>Viewing Your Email Address</h3>
+        <p>
+            At the top of the dashboard, your temporary email address is displayed in a read‑only text field. You can click the <strong>Copy Email</strong> button (or focus it with <kbd>Tab</kbd> and press <kbd>Enter</kbd>) to copy the address to your clipboard. Paste it wherever you need to receive a verification or confirmation message.
+        </p>
+
+        <h3>Checking for Messages</h3>
+        <p>
+            Use the <strong>Manual Refresh (F5)</strong> button to instantly check for new messages. If you are waiting for a time‑sensitive email (such as a verification code), enable the <strong>Auto Refresh</strong> checkbox. The program will automatically poll the server at your chosen interval and notify you when new messages arrive.
+        </p>
+
+        <h3>Configurable Auto‑Refresh Interval <span class="new-badge">NEW</span></h3>
+        <p>
+            <strong>New in V2.1.3:</strong> You can now choose your preferred auto‑refresh interval from the <strong>Settings &gt; Auto Refresh</strong> menu. Available options:
+        </p>
+        <ul>
+            <li><strong>10 seconds</strong> — For time‑sensitive verification codes.</li>
+            <li><strong>30 seconds</strong> — Default, balanced interval.</li>
+            <li><strong>1 minute</strong> — Moderate polling rate.</li>
+            <li><strong>5 minutes</strong> — Low‑frequency checking.</li>
+            <li><strong>10 minutes</strong> — Minimal server requests.</li>
+        </ul>
+        <p>
+            The selected interval applies immediately — no restart required. Your choice is saved between sessions.
+        </p>
+
+        <h3>Reading a Message</h3>
+        <p>
+            Double‑click any message in the inbox list (or highlight it with arrow keys and press <kbd>Enter</kbd>) to open it in the message viewer. The viewer shows the subject, sender, and full body content. From the viewer you can:
+        </p>
+        <ul>
+            <li>Copy the entire message to clipboard.</li>
+            <li>Copy the currently selected line.</li>
+            <li>Copy only the sender's name.</li>
+            <li>Open the message in Notepad for easier reading.</li>
+            <li>Save the message as an HTML file.</li>
+            <li>Extract links and numbers (see next section).</li>
+        </ul>
+    </section>
+
+    <!-- ==================== 8. CONTENT EXTRACTION ==================== -->
+    <section id="content-extraction">
+        <h2>8. Extracting Links &amp; Verification Codes</h2>
+        <p>
+            One of the most powerful features of Gate Mail Pro is the <strong>Smart Content Extraction</strong> tool. When you open a message, use the <strong>Actions Menu</strong> button or right‑click anywhere in the message area (or press the <kbd>Applications</kbd> key / <kbd>Shift</kbd>+<kbd>F10</kbd>) to open the context menu. You will see:
+        </p>
+        <ul>
+            <li><strong>Copy Selected Line:</strong> Copies only the line currently highlighted in the message.</li>
+            <li><strong>Copy Message:</strong> Copies the entire message body.</li>
+            <li><strong>Open in Notepad:</strong> Launches Notepad with the full text for comfortable reading.</li>
+            <li><strong>Save as HTML:</strong> Saves the complete message as a formatted HTML file to your chosen location.</li>
+            <li><strong>Copy Sender Name:</strong> Copies only the sender's email address or name.</li>
+            <li><strong>Extract Links &amp; Numbers:</strong> A submenu that lists every URL and every number with 5 or more digits found in the message. Click any link to open it directly in your browser, or click any number to copy it to your clipboard. This is extremely useful for grabbing verification codes without manually searching through walls of text.</li>
+            <li><strong>Copy All Extracted:</strong> Copies all found links and numbers at once.</li>
+            <li><strong>Open Extracted Items in Notepad:</strong> Opens a new Notepad window containing all extracted links and numbers, one per line.</li>
+        </ul>
+        <p><strong>Screen Reader Tip:</strong> After opening a message, press <kbd>Applications</kbd> or <kbd>Shift</kbd>+<kbd>F10</kbd> to open the context menu. Arrow down to "Extract Links & Numbers" and press <kbd>Right Arrow</kbd> to expand the submenu. All found links and numbers will be listed — press <kbd>Enter</kbd> on any of them to copy or open it.</p>
+    </section>
+
+    <!-- ==================== 9. INBOX FEATURES ==================== -->
+    <section id="inbox-features">
+        <h2>9. Inbox Features: Search, Sort &amp; Statistics <span class="new-badge">NEW</span></h2>
+        <p>
+            <strong>New in V2.1.3:</strong> The inbox dashboard now includes powerful tools to help you manage your messages efficiently.
+        </p>
+
+        <h3>Inbox Search</h3>
+        <p>
+            A search field is located below the refresh controls. Type any text to instantly filter messages by sender name or subject. The filter is case‑insensitive and updates in real time as you type. When no messages match your search, a "No results found" message is displayed.
+        </p>
+
+        <h3>Sort Options</h3>
+        <p>
+            A sort dropdown is located next to the search field. You can choose between:
+        </p>
+        <ul>
+            <li><strong>Oldest First:</strong> Messages are displayed in chronological order (oldest at the top).</li>
+            <li><strong>Newest First:</strong> Messages are displayed in reverse chronological order (newest at the top).</li>
+        </ul>
+        <p>
+            Changing the sort order immediately updates the message list. The selected sort preference is remembered between sessions.
+        </p>
+
+        <h3>Inbox Statistics</h3>
+        <p>
+            Below the message list, a statistics line displays the total message count in the current inbox and the number of unique senders.
+        </p>
+
+        <h3>Quick Preview</h3>
+        <p>
+            Hover over any message in the inbox list to see a tooltip with the sender and subject information.
+        </p>
+
+        <h3>Export Emails <span class="new-badge">NEW</span></h3>
+        <p>
+            You can export all emails in your inbox as individual HTML files. Go to the inbox dashboard and use the export function to save all messages to a folder of your choice. Each email is saved as a separate, well‑formatted HTML file with sender, subject, and body content preserved.
+        </p>
+    </section>
+
+    <!-- ==================== 10. MENU SETTINGS ==================== -->
+    <section id="menu-settings">
+        <h2>10. Menu Settings Explained</h2>
+        <p>
+            The menu bar is located at the top of the window and can be accessed by pressing <kbd>Alt</kbd> or clicking on it. The menus are organized into two main groups: <strong>Settings</strong> and <strong>Help</strong>.
+        </p>
+
+        <h3>Settings Menu</h3>
+        <ul>
+            <li><strong>Language:</strong> Choose your preferred interface language. Gate Mail Pro automatically discovers language files placed in the <code>languages</code> folder. Supported languages include English and Arabic by default, with the ability to add more via custom translation files.</li>
+            <li><strong>Theme:</strong> Toggle between <strong>Dark Mode</strong> (default) and <strong>Light Mode</strong>. The change takes effect immediately without restarting.</li>
+            <li><strong>Font Size:</strong> Five preset levels are available — from Small (12px) to Maximum (20px). The default is Medium (14px). This setting helps users with low vision find their most comfortable reading size.</li>
+            <li><strong>Inside App Sounds:</strong> Choose which sound plays when a new message arrives while the window is focused. Hover over a file name to preview it.</li>
+            <li><strong>Outside App Sounds:</strong> Choose which sound plays when a new message arrives while the window is minimized or in the background.</li>
+            <li><strong>Auto Refresh Interval:</strong> Choose how often the inbox is automatically checked — 10s, 30s, 1m, 5m, or 10m.</li>
+            <li><strong>Clear All Data:</strong> Wipes all accounts, settings, and preferences. The application will close after confirmation.</li>
+            <li><strong>Exit Program:</strong> Opens the close dialog where you can choose to exit completely or keep running in the background.</li>
+        </ul>
+
+        <h3>Help Menu</h3>
+        <ul>
+            <li><strong>About App:</strong> Opens the README file in your web browser.</li>
+            <li><strong>About Developer:</strong> Shows contact information for the developer and contributor.</li>
+            <li><strong>Check for Updates:</strong> Connects to the update server and informs you if a newer version is available.</li>
+            <li><strong>What's New:</strong> Displays the change log for the current version. You can opt to never see this window again by checking the checkbox at the bottom.</li>
+        </ul>
+    </section>
+
+    <!-- ==================== 11. SYSTEM TRAY ==================== -->
+    <section id="system-tray">
+        <h2>11. System Tray &amp; Background Operation</h2>
+        <p>
+            Gate Mail Pro supports running silently in the background. When you close the main window (by clicking the X button or pressing <kbd>Alt</kbd>+<kbd>F4</kbd>), a dialog appears with three options:
+        </p>
+        <ul>
+            <li><strong>Cancel:</strong> Return to the application without closing it.</li>
+            <li><strong>Keep Running in Background:</strong> The window hides, but the application continues running. You will see its icon in the system tray (near the clock). The app will continue to check for new messages if auto‑refresh is enabled, and will show desktop notifications for incoming mail.</li>
+            <li><strong>Exit Program:</strong> Completely terminates Gate Mail Pro and all its background processes.</li>
+        </ul>
+        <p>
+            <strong>Restoring from System Tray:</strong> Click the tray icon once to restore or hide the window. Right‑click the tray icon for a menu with <strong>Restore</strong> and <strong>Exit</strong> options.
+        </p>
+        <p><strong>Screen Reader Tip:</strong> Navigate to the system tray with <kbd>Windows</kbd>+<kbd>B</kbd>, arrow to the Gate Mail Pro icon, and press <kbd>Enter</kbd> to restore the window or <kbd>Applications</kbd> to open the tray menu.</p>
+    </section>
+
+    <!-- ==================== 12. SOUNDS ==================== -->
+    <section id="sounds">
+        <h2>12. Notification Sounds</h2>
+        <p>
+            The application includes two separate sound channels for incoming message alerts:
+        </p>
+        <ul>
+            <li><strong>Inside App Sound:</strong> Played when the Gate Mail Pro window is active and visible.</li>
+            <li><strong>Outside App Sound:</strong> Played when the application is minimized to tray or hidden.</li>
+        </ul>
+        <p>
+            You can change these sounds at any time via <strong>Settings &gt; Inside/Outside App Sounds</strong>. Hover over any file name to hear a preview. Custom sound files can be added by placing them in the <code>sounds</code> folder next to the executable. The supported format is <code>.wav</code>.
+        </p>
+    </section>
+
+    <!-- ==================== 13. UPDATES ==================== -->
+    <section id="updates">
+        <h2>13. Checking for Updates</h2>
+        <p>
+            To check if a newer version of Gate Mail Pro is available, go to <strong>Help &gt; Check for Updates</strong>. The application will contact the update server and compare versions. If a newer version is found, a dialog will present you with two download options:
+        </p>
+        <ul>
+            <li><strong>Installer Version:</strong> A traditional setup wizard that installs the application on your system.</li>
+            <li><strong>Portable Version:</strong> A ZIP archive containing the portable executable — ideal for USB drives.</li>
+        </ul>
+        <p>
+            You can copy the download link or open it directly in your browser from this dialog.
+        </p>
+        <p>
+            <strong>Automatic Check:</strong> Gate Mail Pro quietly checks for updates a few seconds after launching. If an update is found, the same dialog will appear automatically.
+        </p>
+    </section>
+
+    <!-- ==================== 14. UNIQUE FEATURES SUMMARY ==================== -->
+    <section id="unique-features">
+        <h2>14. Unique Features Summary</h2>
+        <p>
+            Unlike basic web‑based disposable mail services that delete your inbox the moment you refresh or close your browser, Gate Mail Pro offers key desktop utilities:
+        </p>
+        <ul>
+            <li><strong>Multi‑Server Routing:</strong> Choose from various temporary email servers depending on your needs.</li>
+            <li><strong>Account Persistence:</strong> Your generated accounts are saved locally. You can close the program, open it tomorrow, and log back into your temporary inbox to read new verification messages.</li>
+            <li><strong>Smart Content Extraction:</strong> Right‑click on any incoming message to extract links and verification numbers instantly. This eliminates the need to scan through long, HTML‑heavy emails manually.</li>
+            <li><strong>Background Operation:</strong> Minimize the application to your system tray. It will run silently in the background, showing desktop alerts only when new mail is detected.</li>
+            <li><strong>Complete UI Personalization:</strong> Customize font sizes, toggle between high‑quality light and dark modes, and easily load custom translation files.</li>
+            <li><strong>Full Keyboard &amp; Screen Reader Support:</strong> Every function is accessible via keyboard shortcuts, and all UI elements are properly labeled for assistive technology.</li>
+            <li><strong>Configurable Auto‑Refresh:</strong> Choose your preferred polling interval from 10 seconds to 10 minutes.</li>
+            <li><strong>Inbox Search &amp; Sort:</strong> Quickly find messages by sender or subject, and sort by oldest or newest first.</li>
+            <li><strong>Email Export:</strong> Export all inbox messages as individually formatted HTML files.</li>
+            <li><strong>Smart Token Refresh:</strong> The application automatically refreshes authentication tokens to maintain your session across extended periods.</li>
+        </ul>
+    </section>
+
+    <!-- ==================== 15. TROUBLESHOOTING ==================== -->
+    <section id="troubleshooting">
+        <h2>15. Troubleshooting &amp; FAQ</h2>
+
+        <h3>Q: The program shows "Network error or service unavailable."</h3>
+        <p>
+            This means the temporary email server could not be reached. Check your internet connection. Some servers may be temporarily down. Try selecting a different domain from the creation screen — Gate Mail Pro supports multiple independent servers.
+        </p>
+
+        <h3>Q: I created an account but no messages appear in the inbox.</h3>
+        <p>
+            Press <kbd>F5</kbd> or click <strong>Manual Refresh</strong>. If you are expecting a verification email, enable <strong>Auto Refresh</strong> and wait up to 60 seconds. Also ensure you have given the correct email address to the website or service you are registering with — use the <strong>Copy Email</strong> button to avoid typos.
+        </p>
+
+        <h3>Q: Sounds are not playing after I compiled the program.</h3>
+        <p>
+            Verify that the <code>sounds</code> folder exists in the same directory as the executable and contains valid <code>.wav</code> files. The application looks for sounds relative to its executable location.
+        </p>
+
+        <h3>Q: The interface language did not change after I selected a new language.</h3>
+        <p>
+            After changing the language, the entire interface rebuilds itself. This takes effect immediately. If you see mixed languages, ensure the language file inside the <code>languages</code> folder is complete and correctly formatted.
+        </p>
+
+        <h3>Q: How do I add a new language?</h3>
+        <p>
+            Create a <code>.lang</code> file (JSON format) inside the <code>languages</code> folder. The application will detect it automatically on the next launch. You can use the existing English or Arabic files as templates.
+        </p>
+
+        <h3>Q: Can I use this application on other operating systems?</h3>
+        <p>
+            Gate Mail Pro is currently designed and tested for Windows. However, since it is built with cross‑platform technologies, advanced users may be able to run the source code on other operating systems with minor adjustments. Pre‑compiled executables are only provided for Windows at this time.
+        </p>
+
+        <h3>Q: Is my data sent anywhere?</h3>
+        <p>
+            All account data is stored <strong>locally</strong> on your computer. No personal information or email content is transmitted to any server other than the temporary email servers themselves (which is necessary to fetch your messages). An anonymous ping is sent on startup for usage statistics, containing no identifiable information.
+        </p>
+
+        <h3>Q: Why is there a limit of 2 accounts?</h3>
+        <p>
+            The account limit of 2 helps maintain optimal performance and ensures reliable operation across all supported servers. If you need more accounts, you can delete unused ones and create new ones as needed.
+        </p>
+    </section>
+
+    <!-- ==================== 16. CREDITS ==================== -->
+    <section id="credits">
+        <h2>16. Development &amp; Credits</h2>
+
+        <p>
+            All praise and thanks are due to Allah, the Lord of all worlds, who granted us the ability, knowledge, and patience to bring this project to completion. Without His grace and guidance, none of this would have been possible.
+        </p>
+
+        <h3>Team Members</h3>
+        <div class="team-grid">
+            <div class="member-card">
+                <h3>Ahmed Hassan Abd El-Naby</h3>
+                <div class="role">Developer &amp; Documentation Author</div>
+                <p>Built and designed the entire application. Also authored and maintained this user documentation.</p>
+            </div>
+            <div class="member-card">
+                <h3>Youssef Ahmed Hedeya</h3>
+                <div class="role">Contributor</div>
+                <p>Contributed to the core concept of the program and participated in testing it.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== 17. CONTACT ==================== -->
+    <section id="contact">
+        <h2>17. Contact &amp; Support</h2>
+        <p>
+            If you encounter any issues, want to report a bug, or would like to propose an enhancement to the program, please contact the developer directly:
+        </p>
+
+        <div class="developer-note">
+            <strong>Important:</strong> The contact information below is for the <strong>developer only</strong>, not for a support team. Please reach out for bug reports, feature requests, or general inquiries about the application.
+        </div>
+
+        <div class="contact-info">
+            <div class="contact-item">
+                <span>01558863325</span>
+                <div class="btn-group">
+                    <button id="copy-phone" class="btn btn-copy" onclick="copyValue('01558863325', 'copy-phone')">Copy Phone</button>
+                    <a href="https://wa.me/201558863325" target="_blank" class="btn btn-link">WhatsApp</a>
+                </div>
+            </div>
+            
+            <div class="contact-item">
+                <span>ah2635670@gmail.com</span>
+                <div class="btn-group">
+                    <button id="copy-email" class="btn btn-copy" onclick="copyValue('ah2635670@gmail.com', 'copy-email')">Copy Email</button>
+                    <a href="mailto:ah2635670@gmail.com" class="btn btn-copy" style="background-color: #d44638;">Email Us</a>
+                </div>
+            </div>
+
+            <div class="contact-item">
+                <span>@ah3376</span>
+                <div class="btn-group">
+                    <a href="https://t.me/ah3376" target="_blank" class="btn btn-link telegram">Telegram</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        All rights reserved &copy; 2026 | Gate Mail Pro — Version 2.1.3
+    </footer>
+
+</div>
+
+<script>
+    function copyValue(text, buttonId) {
+        navigator.clipboard.writeText(text).then(() => {
+            const btn = document.getElementById(buttonId);
+            const originalText = btn.innerHTML;
+            btn.innerHTML = "Copied! ✓";
+            btn.style.backgroundColor = "#2e7d32";
+            setTimeout(() => {
+                btn.innerHTML = originalText;
+                btn.style.backgroundColor = "";
+            }, 1800);
+        }).catch(err => {
+            alert("Clipboard copy failed: " + err);
+        });
+    }
+</script>
+
+</body>
+</html>
