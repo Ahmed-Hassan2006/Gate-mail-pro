@@ -356,6 +356,39 @@
             color: #856404;
         }
 
+        /* ---- Legal / Terms Section ---- */
+        .legal-box {
+            background-color: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-left: 4px solid #1976d2;
+            border-radius: 8px;
+            padding: 20px 24px;
+            margin: 20px 0;
+        }
+
+        .legal-box h3 {
+            color: #1e3c72;
+            font-size: 1.15rem;
+            margin-bottom: 10px;
+        }
+
+        .legal-box p, .legal-box li {
+            font-size: 1rem;
+            color: #495057;
+        }
+
+        .legal-highlight {
+            background-color: #e8f4fd;
+            border: 1px solid #b3d8f5;
+            border-radius: 6px;
+            padding: 14px 18px;
+            margin: 15px 0;
+            font-weight: 600;
+            color: #1565c0;
+            text-align: center;
+            font-size: 1.05rem;
+        }
+
         footer {
             text-align: center;
             padding: 20px 0;
@@ -380,6 +413,7 @@
         <ol>
             <li><a href="#what-is-gmp">What is Gate Mail Pro?</a></li>
             <li><a href="#disposable-email">Understanding Disposable Email</a></li>
+            <li><a href="#privacy">Privacy &amp; Data Handling</a></li>
             <li><a href="#download">Download &amp; Installation</a></li>
             <li><a href="#interface-overview">Interface Overview &amp; Screen Reader Navigation</a></li>
             <li><a href="#keyboard-shortcuts">Keyboard Shortcuts Reference</a></li>
@@ -393,6 +427,7 @@
             <li><a href="#updates">Checking for Updates</a></li>
             <li><a href="#unique-features">Unique Features Summary</a></li>
             <li><a href="#troubleshooting">Troubleshooting &amp; FAQ</a></li>
+            <li><a href="#terms">Terms of Use &amp; Legal Disclaimer</a></li>
             <li><a href="#credits">Development &amp; Credits</a></li>
             <li><a href="#contact">Contact &amp; Support</a></li>
         </ol>
@@ -423,11 +458,51 @@
         </ul>
     </section>
 
-    <!-- ==================== 3. DOWNLOAD & INSTALLATION ==================== -->
+    <!-- ==================== 3. PRIVACY & DATA HANDLING ==================== -->
+    <section id="privacy">
+        <h2>3. Privacy &amp; Data Handling</h2>
+        <p>
+            Your information and privacy are the foundation of Gate Mail Pro. The application was built from the ground up with privacy-first principles — your data remains yours, and nothing unnecessary ever leaves your device.
+        </p>
+
+        <h3>What the Application Sends</h3>
+        <p>
+            Gate Mail Pro communicates exclusively with the temporary email server you select. No data is sent to any other external party. Here is exactly what is transmitted and when:
+        </p>
+        <ul>
+            <li><strong>When creating an account:</strong> Only the username you choose and the domain you register are sent to the designated server to set up your temporary address. No personal information, device data, or tracking identifiers are ever transmitted.</li>
+            <li><strong>When checking your inbox:</strong> Your temporary email address and the connection token (used solely to prove ownership of that address) are sent. This is required to retrieve your messages.</li>
+            <li><strong>When reading a message:</strong> Your email address, the access token, and the message ID are sent. Nothing else.</li>
+        </ul>
+
+        <h3>What the Application Does NOT Send</h3>
+        <ul>
+            <li>Your real email address or any other personal information.</li>
+            <li>Your device name, IP address, location, or device details.</li>
+            <li>Your browsing history, file system data, or installed programs.</li>
+            <li>Any passwords, financial data, or sensitive trusted data.</li>
+            <li>Any data from your computer beyond what is strictly required to operate the temporary email service.</li>
+        </ul>
+
+        <h3>Data Stored Locally Only</h3>
+        <p>
+            All your accounts, preferences, and email content are stored exclusively on your local device. Nothing is uploaded to any cloud service, analytics platform, or external database. If you uninstall the application, all your data will be deleted along with it.
+        </p>
+
+        <h3>Anonymous Usage Statistics</h3>
+        <p>
+            When you launch the application for the first time, a single anonymous signal is sent. This signal contains no personally identifiable information — it is only a numerical counter used to estimate the total number of users. No identifier, IP address, or any personal data is included in this transmission.
+        </p>
+    </section>
+
+    <!-- ==================== 4. DOWNLOAD & INSTALLATION ==================== -->
     <section id="download">
-        <h2>3. Download &amp; Installation</h2>
+        <h2>4. Download &amp; Installation</h2>
         <p>
             Gate Mail Pro is distributed in two formats. Choose the one that best suits your needs:
+        </p>
+        <p>
+            <strong>By downloading and using Gate Mail Pro, you agree to our <a href="#terms">Terms of Use</a> and <a href="#privacy">Privacy Policy</a>.</strong>
         </p>
         <div class="download-section">
             <a href="https://github.com/Ahmed-Hassan2006/Gate-mail-pro/releases/download/V2.1.3/GateMailProV2.1.3_Setup.exe" target="_blank" class="download-btn installer">
@@ -454,9 +529,9 @@
         </p>
     </section>
 
-    <!-- ==================== 4. INTERFACE OVERVIEW ==================== -->
+    <!-- ==================== 5. INTERFACE OVERVIEW ==================== -->
     <section id="interface-overview">
-        <h2>4. Interface Overview &amp; Screen Reader Navigation</h2>
+        <h2>5. Interface Overview &amp; Screen Reader Navigation</h2>
         <p>
             Gate Mail Pro was built with accessibility in mind. Every button, list, text field, and menu item is properly labeled and exposed to assistive technology such as screen readers (NVDA, JAWS, Narrator). The interface is divided into <strong>four main screens</strong> that you switch between using the navigation controls or keyboard shortcuts.
         </p>
@@ -492,9 +567,9 @@
         <p><strong>Screen Reader Tip:</strong> The message content is announced line by line. Use arrow keys to navigate. Press <kbd>Applications</kbd> or <kbd>Shift</kbd>+<kbd>F10</kbd> to open the context menu for additional actions.</p>
     </section>
 
-    <!-- ==================== 5. KEYBOARD SHORTCUTS ==================== -->
+    <!-- ==================== 6. KEYBOARD SHORTCUTS ==================== -->
     <section id="keyboard-shortcuts">
-        <h2>5. Keyboard Shortcuts Reference</h2>
+        <h2>6. Keyboard Shortcuts Reference</h2>
         <p>
             Gate Mail Pro can be operated entirely without a mouse. The following shortcuts work globally or within specific screens. They are especially useful for screen reader users who rely on the keyboard.
         </p>
@@ -569,9 +644,9 @@
         </p>
     </section>
 
-    <!-- ==================== 6. CREATING & MANAGING ACCOUNTS ==================== -->
+    <!-- ==================== 7. CREATING & MANAGING ACCOUNTS ==================== -->
     <section id="creating-accounts">
-        <h2>6. Creating &amp; Managing Accounts</h2>
+        <h2>7. Creating &amp; Managing Accounts</h2>
         <h3>How to Create an Account</h3>
         <ol>
             <li>From the main screen, click <strong>Create New Account</strong> or press <kbd>Tab</kbd> until you reach it and press <kbd>Enter</kbd>.</li>
@@ -602,9 +677,9 @@
         </p>
     </section>
 
-    <!-- ==================== 7. INBOX DASHBOARD ==================== -->
+    <!-- ==================== 8. INBOX DASHBOARD ==================== -->
     <section id="inbox-dashboard">
-        <h2>7. Inbox Dashboard &amp; Reading Messages</h2>
+        <h2>8. Inbox Dashboard &amp; Reading Messages</h2>
         <h3>Viewing Your Email Address</h3>
         <p>
             At the top of the dashboard, your temporary email address is displayed in a read‑only text field. You can click the <strong>Copy Email</strong> button (or focus it with <kbd>Tab</kbd> and press <kbd>Enter</kbd>) to copy the address to your clipboard. Paste it wherever you need to receive a verification or confirmation message.
@@ -644,9 +719,9 @@
         </ul>
     </section>
 
-    <!-- ==================== 8. CONTENT EXTRACTION ==================== -->
+    <!-- ==================== 9. CONTENT EXTRACTION ==================== -->
     <section id="content-extraction">
-        <h2>8. Extracting Links &amp; Verification Codes</h2>
+        <h2>9. Extracting Links &amp; Verification Codes</h2>
         <p>
             One of the most powerful features of Gate Mail Pro is the <strong>Smart Content Extraction</strong> tool. When you open a message, use the <strong>Actions Menu</strong> button or right‑click anywhere in the message area (or press the <kbd>Applications</kbd> key / <kbd>Shift</kbd>+<kbd>F10</kbd>) to open the context menu. You will see:
         </p>
@@ -663,9 +738,9 @@
         <p><strong>Screen Reader Tip:</strong> After opening a message, press <kbd>Applications</kbd> or <kbd>Shift</kbd>+<kbd>F10</kbd> to open the context menu. Arrow down to "Extract Links & Numbers" and press <kbd>Right Arrow</kbd> to expand the submenu. All found links and numbers will be listed — press <kbd>Enter</kbd> on any of them to copy or open it.</p>
     </section>
 
-    <!-- ==================== 9. INBOX FEATURES ==================== -->
+    <!-- ==================== 10. INBOX FEATURES ==================== -->
     <section id="inbox-features">
-        <h2>9. Inbox Features: Search, Sort &amp; Statistics <span class="new-badge">NEW</span></h2>
+        <h2>10. Inbox Features: Search, Sort &amp; Statistics <span class="new-badge">NEW</span></h2>
         <p>
             <strong>New in V2.1.3:</strong> The inbox dashboard now includes powerful tools to help you manage your messages efficiently.
         </p>
@@ -703,9 +778,9 @@
         </p>
     </section>
 
-    <!-- ==================== 10. MENU SETTINGS ==================== -->
+    <!-- ==================== 11. MENU SETTINGS ==================== -->
     <section id="menu-settings">
-        <h2>10. Menu Settings Explained</h2>
+        <h2>11. Menu Settings Explained</h2>
         <p>
             The menu bar is located at the top of the window and can be accessed by pressing <kbd>Alt</kbd> or clicking on it. The menus are organized into two main groups: <strong>Settings</strong> and <strong>Help</strong>.
         </p>
@@ -731,9 +806,9 @@
         </ul>
     </section>
 
-    <!-- ==================== 11. SYSTEM TRAY ==================== -->
+    <!-- ==================== 12. SYSTEM TRAY ==================== -->
     <section id="system-tray">
-        <h2>11. System Tray &amp; Background Operation</h2>
+        <h2>12. System Tray &amp; Background Operation</h2>
         <p>
             Gate Mail Pro supports running silently in the background. When you close the main window (by clicking the X button or pressing <kbd>Alt</kbd>+<kbd>F4</kbd>), a dialog appears with three options:
         </p>
@@ -748,9 +823,9 @@
         <p><strong>Screen Reader Tip:</strong> Navigate to the system tray with <kbd>Windows</kbd>+<kbd>B</kbd>, arrow to the Gate Mail Pro icon, and press <kbd>Enter</kbd> to restore the window or <kbd>Applications</kbd> to open the tray menu.</p>
     </section>
 
-    <!-- ==================== 12. SOUNDS ==================== -->
+    <!-- ==================== 13. SOUNDS ==================== -->
     <section id="sounds">
-        <h2>12. Notification Sounds</h2>
+        <h2>13. Notification Sounds</h2>
         <p>
             The application includes two separate sound channels for incoming message alerts:
         </p>
@@ -763,9 +838,9 @@
         </p>
     </section>
 
-    <!-- ==================== 13. UPDATES ==================== -->
+    <!-- ==================== 14. UPDATES ==================== -->
     <section id="updates">
-        <h2>13. Checking for Updates</h2>
+        <h2>14. Checking for Updates</h2>
         <p>
             To check if a newer version of Gate Mail Pro is available, go to <strong>Help &gt; Check for Updates</strong>. The application will contact the update server and compare versions. If a newer version is found, a dialog will present you with two download options:
         </p>
@@ -781,9 +856,9 @@
         </p>
     </section>
 
-    <!-- ==================== 14. UNIQUE FEATURES SUMMARY ==================== -->
+    <!-- ==================== 15. UNIQUE FEATURES SUMMARY ==================== -->
     <section id="unique-features">
-        <h2>14. Unique Features Summary</h2>
+        <h2>15. Unique Features Summary</h2>
         <p>
             Unlike basic web‑based disposable mail services that delete your inbox the moment you refresh or close your browser, Gate Mail Pro offers key desktop utilities:
         </p>
@@ -801,9 +876,9 @@
         </ul>
     </section>
 
-    <!-- ==================== 15. TROUBLESHOOTING ==================== -->
+    <!-- ==================== 16. TROUBLESHOOTING ==================== -->
     <section id="troubleshooting">
-        <h2>15. Troubleshooting &amp; FAQ</h2>
+        <h2>16. Troubleshooting &amp; FAQ</h2>
 
         <h3>Q: The program shows "Network error or service unavailable."</h3>
         <p>
@@ -846,9 +921,72 @@
         </p>
     </section>
 
-    <!-- ==================== 16. CREDITS ==================== -->
+    <!-- ==================== 17. TERMS OF USE ==================== -->
+    <section id="terms">
+        <h2>17. Terms of Use &amp; Legal Disclaimer</h2>
+
+        <div class="legal-highlight">
+            By downloading, installing, or using Gate Mail Pro, you acknowledge that you have read, understood, and agree to be bound by the terms stated on this page.
+        </div>
+
+        <h3>Intended Purpose</h3>
+        <p>
+            Gate Mail Pro was designed with a clear and legitimate purpose: <strong>helping individuals protect their privacy and secure their real email accounts</strong>. The application provides a convenient way to create and manage temporary email addresses so that users can avoid exposing their personal email to spam, phishing attempts, data breaches, and unwanted marketing.
+        </p>
+        <p>
+            The primary goals of this application are:
+        </p>
+        <ul>
+            <li><strong>Privacy Protection:</strong> Shielding your real email address from websites and services that may sell, leak, or misuse your personal data.</li>
+            <li><strong>Spam Prevention:</strong> Keeping your primary inbox clean by using temporary addresses for sign‑ups, trials, and verifications.</li>
+            <li><strong>Account Security:</strong> Reducing the risk of your real accounts being compromised through exposure on untrusted platforms.</li>
+            <li><strong>Fraud Awareness:</strong> Enabling users to test and verify online services without committing sensitive personal information.</li>
+        </ul>
+
+        <h3>User Responsibility</h3>
+        <p>
+            Gate Mail Pro is a <strong>tool</strong> — like any tool, its value depends on how it is used. The developer assumes no responsibility and cannot be held liable for any misuse of this application. Specifically:
+        </p>
+        <ul>
+            <li>You are <strong>solely responsible</strong> for how you choose to use the application and the temporary email addresses it generates.</li>
+            <li>You must comply with all applicable local, national, and international laws and regulations when using Gate Mail Pro.</li>
+            <li>You agree not to use this application for any purpose that is unlawful, fraudulent, harassing, harmful, or otherwise objectionable.</li>
+            <li>You understand that using temporary email addresses to bypass legitimate security measures, create fake accounts for malicious purposes, or engage in any form of deception is <strong>strictly prohibited</strong>.</li>
+        </ul>
+
+        <h3>No Warranty</h3>
+        <p>
+            Gate Mail Pro is provided on an <strong>"as is"</strong> and <strong>"as available"</strong> basis. The developer makes no warranties, expressed or implied, regarding the application's reliability, accuracy, availability, or fitness for a particular purpose. The temporary email servers accessed through this application are operated by third parties, and the developer has no control over their availability, policies, or behavior.
+        </p>
+
+        <h3>Limitation of Liability</h3>
+        <p>
+            In no event shall the developer of Gate Mail Pro be held liable for any direct, indirect, incidental, special, or consequential damages arising out of or in connection with the use of this application. This includes, but is not limited to, loss of data, service interruptions, unauthorized access to information, or any other loss resulting from the use or inability to use the application.
+        </p>
+
+        <h3>Third‑Party Services</h3>
+        <p>
+            Gate Mail Pro acts as a gateway to various third‑party temporary email services. These services operate independently and have their own terms of use and privacy policies. The developer does not endorse, guarantee, or assume responsibility for any third‑party service accessed through this application. Your interactions with these services are governed by their respective terms.
+        </p>
+
+        <h3>Intellectual Property</h3>
+        <p>
+            Gate Mail Pro and its documentation are the intellectual property of the developer. You may not copy, modify, distribute, sell, or lease any part of the application or its components without explicit written permission.
+        </p>
+
+        <h3>Acceptance of Terms</h3>
+        <p>
+            Your use of Gate Mail Pro constitutes your acceptance of these terms. If you do not agree with any part of these terms, you should <strong>discontinue use immediately</strong> and uninstall the application. Continued use of the application after any changes to these terms constitutes acceptance of the updated terms.
+        </p>
+
+        <div class="legal-highlight">
+            Use Gate Mail Pro responsibly. Protect your privacy — do not use it to harm others.
+        </div>
+    </section>
+
+    <!-- ==================== 18. CREDITS ==================== -->
     <section id="credits">
-        <h2>16. Development &amp; Credits</h2>
+        <h2>18. Development &amp; Credits</h2>
 
         <p>
             All praise and thanks are due to Allah, the Lord of all worlds, who granted us the ability, knowledge, and patience to bring this project to completion. Without His grace and guidance, none of this would have been possible.
@@ -869,9 +1007,9 @@
         </div>
     </section>
 
-    <!-- ==================== 17. CONTACT ==================== -->
+    <!-- ==================== 19. CONTACT ==================== -->
     <section id="contact">
-        <h2>17. Contact &amp; Support</h2>
+        <h2>19. Contact &amp; Support</h2>
         <p>
             If you encounter any issues, want to report a bug, or would like to propose an enhancement to the program, please contact the developer directly:
         </p>
